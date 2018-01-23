@@ -1,0 +1,38 @@
+
+<!--Normal view -->
+
+<div *ngIf="!get_favorites && panoramas" class="row">
+	<div *ngFor='let panorama of panoramas.items; trackBy: index; let i = index'>
+		<div class="card thumbnail">
+			<a class="no-style" [href]=panorama.data.images.thumbnails[0].url> 
+				<div class="card-header">
+					<p> {{panorama.data.published_at | date: 'dd/MM/yyyy'}} </p>
+				</div>
+			 	<img class="card-img-top" [src]=panorama.data.images.thumbnails[0].url > 
+			</a>
+			<div class="card-block">
+				<h4 class="col-lg-10 card-title">{{panorama.data.title}} </h4>
+				<i (click)="likeIt(panorama.data)" [ngClass]="favorites[panorama.data.title]  == true ?'glyphicon-star':'glyphicon-star-empty'" class="col-lg-2 star glyphicon "></i> 
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Favorites view -->
+<div *ngIf="get_favorites && faves" class="row">
+	<div *ngFor='let panorama of faves; trackBy: index; let i = index'>
+		<div class="card thumbnail">
+			<a class="no-style" [href]=panorama.images.thumbnails[0].url> 
+				<div class="card-header">
+					<p> {{panorama.published_at | date: 'dd/MM/yyyy'}} </p>
+				</div>
+			 	<img class="card-img-top" [src]=panorama.images.thumbnails[0].url > 
+			</a>
+			<div class="card-block">
+				<h4 class="col-lg-10 card-title">{{panorama.title}} </h4>
+				<i class="col-lg-2 star glyphicon glyphicon-star"></i> 
+			</div>
+		</div>
+	</div>
+</div>
+
+

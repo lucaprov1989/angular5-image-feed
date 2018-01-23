@@ -1,0 +1,28 @@
+
+.star {
+	font-size: 25px;
+	color:gold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.card-title{
+	font-size: 20px;
+	font-weight: bold;
+    color: #333333;
+}
+
+.card {
+	width: 28rem;
+	height: 25rem;
+}
+
+.no-style:hover {
+	text-decoration: none;
+
+}
+
+.card-header {
+	font-weight: bold;
+    color: #333333;
+}
